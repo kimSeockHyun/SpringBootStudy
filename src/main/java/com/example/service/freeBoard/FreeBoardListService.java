@@ -30,7 +30,6 @@ public class FreeBoardListService {
 		PageRequest pageRequest = PageRequest.of(PageNum-1, pageSize, Sort.Direction.DESC, "freeId");
 		Page<FreeBoard> freeBoardPage = freeBoardRepository.findAll(pageRequest);
 		
-		
 		if(freeBoardPage.getSize() == 0) {
 			session.setAttribute("boardList", new ArrayList<FreeBoard>());
 			return "freeBoard";
